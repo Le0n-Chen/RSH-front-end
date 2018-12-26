@@ -18,7 +18,8 @@
     width: 30em;
     height: 30em;
     border-radius: 50%;
-    background: red;
+    background: black;
+    border: 1rem solid burlywood;
     z-index: -1;
     
 }
@@ -30,13 +31,29 @@
     width: 30em;
     height: 30em;
     border-radius: 50%;
-    background: red;
+    background: black;
+    border: 1rem solid burlywood;
     z-index: -1;
 }
 .window-title{
     font-size: 2rem;
     color: cornflowerblue;
     
+}
+.go-back-forward{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 65%;
+    height: 65%;
+    background: burlywood;
+    border-radius: 10%;
+}
+.go-back-forward:hover{
+    background: blue;
 }
 .form-all{
     width: 30rem;
@@ -83,11 +100,18 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
 .main-page__item{
     padding: auto 10rem;
     width: 50%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+}
+
+.main-page__item:hover{
+    background: blue;
+    border-radius: 2rem;
 }
 .main-page__border{
     width: 50%;
@@ -98,4 +122,42 @@
     margin: 0 auto;
     box-sizing: border-box;
     color: white;
+}
+.list-black{
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 40%; 
+    min-height: 40%;
+    background: white;
+    color: black;
+    
+}
+.list-black__ul{
+    min-height: 100%;
+    overflow: scroll;
+}
+.list-black__li{
+    font-size: 1.4rem;
+    text-align: left;
+    margin-left: 4rem;
+}
+.list-black__bottom{
+    position: absolute;
+    font-size: 2rem;
+    line-height: 2rem;
+    height: 2rem;
+    width: 10rem;
+    background: blue;
+    border-radius: 2rem;
+    bottom: -4rem;
+}
+.list-black__edit{    
+    left: 0;  
+}
+
+.list-black__refresh{
+    right: 0;
+
 }

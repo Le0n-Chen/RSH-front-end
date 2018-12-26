@@ -2,7 +2,8 @@ import mirror from 'mirrorx';
 
 function getInitialState () {
     let initialState = {
-        isLogin: false
+        isLogin: false,
+        items:['Black&White', 'Web Status', 'About ME', 'Secret']
     };
     return initialState;
 };
@@ -23,4 +24,4 @@ mirror.model({
     initialState: getInitialState(),
     reducers: reducer,
     effects
-  });
+});

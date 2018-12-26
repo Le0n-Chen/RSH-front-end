@@ -10,14 +10,12 @@ class CommonWindow extends Component {
     }
     render(){
         let {isLogin} = this.props; 
+        console.log(this.props);
         return(
-            <div className="window-common">
-                <div className="window-left"></div>
-                <div className="window-right"></div>
-                <h4 className="window-title">LEON BM</h4>
+            <div>
                 {(!isLogin)?
                     <Login />:
-                    <MainIndex />
+                    <MainIndex {...this.props}/>
                 }
             </div>
         )
@@ -25,12 +23,12 @@ class CommonWindow extends Component {
 }
 
 CommonWindow.propTypes = {
-    isLogin: PropTypes.bool.isRequired
+    isLogin: PropTypes.bool.isRequired,
 };
 
 const CommonWindowSmart = connect(state => {
     return {
-       isLogin: state.app.isLogin
+       isLogin: state.app.isLogin,
     };
   })(CommonWindow);
 export default CommonWindowSmart;
