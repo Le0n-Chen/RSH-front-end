@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
@@ -30,3 +31,5 @@
     transform: rotate(360deg);
   }
 }
+
+@import "assets/styles/styles.css";
