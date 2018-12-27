@@ -13,7 +13,7 @@ class BlackWhite extends Component{
             <div className="list-black">
                 <ul className="list-black__ul">
                     {this.state.blackList.map((ip, i)=>(
-                        <li className='list-black__li' key={i}>Ip: {ip}</li>
+                        <li className='list-black__li' key={i}>IP: {ip}</li>
                     ))}
                 </ul>
                 <div className="list-black__bottom list-black__edit">Edit</div>

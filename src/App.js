@@ -7,6 +7,7 @@ import * as modules from './pages/modules'
 import mirror from 'mirrorx';
 import GoBack from './pages/window/controller/goBack';
 import GoForward from './pages/window/controller/goForward';
+import AnimateRoll from './pages/window/animateRoll';
 let {withRouter, Switch, Route, connect, actions} = mirror;
 
 
@@ -15,14 +16,17 @@ class App extends Component {
     return (
       <div className="App">
           <div className="window-common">
-              <div className="window-left">
+              <div className="window-left window-controller">
                 <GoBack history={this.props.history}/>
               </div>
-              <div className="window-right">
+              <div className="window-right window-controller">
                 <GoForward history={this.props.history}/>
               </div>
+              
               <h4 className="window-title"> Leon BM </h4>
-              <div className="window-main">
+              <div className="window-main"></div>
+              <AnimateRoll />
+              <div className="window-main--text">
                 
                 <Switch>
                   <Route path='/' exact component = { window.CommonWindow } />

@@ -19,6 +19,7 @@
     border-radius: 50%;
     background: black;
     border: 1rem solid burlywood;
+    z-index: 2;
 }
 
 .window-right{
@@ -30,6 +31,7 @@
     border-radius: 50%;
     background: black;
     border: 1rem solid burlywood;
+    z-index: 2;
     
 }
 .window-title{
@@ -43,6 +45,15 @@
     width: 10rem;
     z-index: 999;
     
+}
+.window-context{
+    width: 60%;
+    height: 80%;
+    margin: 0 auto 0 auto;
+    color: white;
+}
+.window-context__about{
+    padding-top: 10%;
 }
 .go-back-forward{
     position: absolute;
@@ -58,6 +69,15 @@
 }
 
 .go-back-forward:hover{
+    background: brown;
+}
+.window-left:hover{
+    background: blue;
+}
+.window-controller{
+    opacity: 0.8;
+}
+.window-right:hover{
     background: blue;
 }
 
@@ -66,15 +86,23 @@
     width:  100%;
     position: absolute;
     background: black;
-   border-radius: 50%;
-   vertical-align: middle; 
-
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 5px solid #777;
+    box-sizing: border-box;
+    z-index: 4;
 }
-
+.window-main--text{
+    height: 60%;
+    width:  100%;
+    margin-top: 35%;
+    position: absolute;
+    z-index: 5;
+}
 .form-all{
     
     text-align: center;
-    margin: 40% auto 0 auto;
+    margin: 0 auto;
 
 }
 .login-row{
@@ -101,8 +129,9 @@
     font-weight: bolder;
 }
 .main-page{
-    height: 60%;
-    margin-top: 35%;
+    height: 100%;
+    
+    z-index: 999;;
 }
 .main-page--box{
     width: 80%;
@@ -145,9 +174,7 @@
 .list-black{
     position: relative;
     width: 50%;
-    margin: 0 auto;
-    margin-top: 10rem;
-    height: 40%; 
+    margin: 0 auto; 
     min-height: 40%;
     background: white;
     color: black;
@@ -158,9 +185,9 @@
     overflow: scroll;
 }
 .list-black__li{
-    font-size: 1.4rem;
+    font-size: 1rem;
     text-align: left;
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 .list-black__bottom{
     position: absolute;
@@ -181,4 +208,15 @@
 .list-black__refresh{
     right: 0;
 
+}
+.window-canvas{
+    position: absolute;
+    width: 10rem;
+    height: 20%;
+    top: 5%;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+    margin: auto;
 }
