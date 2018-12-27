@@ -2,42 +2,46 @@
    position: absolute;
    left: 0;
    right: 0;
-   top: 30rem;
+   top: 0;
    bottom: 0;
    margin:auto;
-   width: 60em;
-   height: 60em;
-   background: black;
-   border-radius: 50%;
-   vertical-align: middle; 
+   width: 100vh;
+   height: 100vh;
+   
+   
 }
 .window-left{
     position: absolute;
     top: 0;
     left: 0;
-    width: 30em;
-    height: 30em;
+    width: 50vh;
+    height: 50vh;
     border-radius: 50%;
     background: black;
     border: 1rem solid burlywood;
-    z-index: -1;
-    
 }
 
 .window-right{
     position: absolute;
     top: 0;
     right: 0;
-    width: 30em;
-    height: 30em;
+    width: 50vh;
+    height: 50vh;
     border-radius: 50%;
     background: black;
     border: 1rem solid burlywood;
-    z-index: -1;
+    
 }
 .window-title{
     font-size: 2rem;
     color: cornflowerblue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10%;
+    width: 10rem;
+    z-index: 999;
     
 }
 .go-back-forward{
@@ -52,14 +56,24 @@
     background: burlywood;
     border-radius: 10%;
 }
+
 .go-back-forward:hover{
     background: blue;
 }
+
+.window-main{
+    height: 100%;
+    width:  100%;
+    position: absolute;
+    background: black;
+   border-radius: 50%;
+   vertical-align: middle; 
+
+}
+
 .form-all{
-    width: 30rem;
-    height: 30rem;
-    text-align: center;
     
+    text-align: center;
     margin: 40% auto 0 auto;
 
 }
@@ -87,13 +101,12 @@
     font-weight: bolder;
 }
 .main-page{
-    height: 30rem;
-    margin-top: 10rem;
-    display: flex;
-    align-items: center;
+    height: 60%;
+    margin-top: 35%;
 }
 .main-page--box{
     width: 80%;
+    height: 50%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -103,9 +116,10 @@
 
 .main-page__item{
     padding: auto 10rem;
+    height: 60%;
     width: 50%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -114,14 +128,19 @@
     border-radius: 2rem;
 }
 .main-page__border{
-    width: 50%;
-    font-size: 1.6rem;
+    width: 80%;
+    height: 50%;
+    line-height: 1;
+    font-size: 1rem;
     font-weight: bolder;
     border-radius: 1rem;
     border: 5px solid white;
     margin: 0 auto;
     box-sizing: border-box;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .list-black{
     position: relative;
@@ -145,10 +164,12 @@
 }
 .list-black__bottom{
     position: absolute;
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 2rem;
+    color: white;
+    font-weight:bold;
     height: 2rem;
-    width: 10rem;
+    width: 25%;;
     background: blue;
     border-radius: 2rem;
     bottom: -4rem;

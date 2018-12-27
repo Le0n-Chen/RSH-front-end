@@ -21,14 +21,17 @@ class App extends Component {
               <div className="window-right">
                 <GoForward history={this.props.history}/>
               </div>
-              <h4 className="window-title">LEON BM</h4>
-              <Switch>
-                <Route path='/' exact component = { window.CommonWindow } />
-                <Route path='/blackWhite' component = { modules.BlackWhite } />
-                <Route path='/webStatus' component = { modules.WebStatus } />
-                <Route path='/aboutMe' component = { modules.AboutMe } />
-                <Route path='/secret' component = {modules.Secret} />
-              </Switch>
+              <h4 className="window-title"> Leon BM </h4>
+              <div className="window-main">
+                
+                <Switch>
+                  <Route path='/' exact component = { window.CommonWindow } />
+                  <Route path='/blackWhite' component = { modules.BlackWhite } />
+                  <Route path='/webStatus' component = { modules.WebStatus } />
+                  <Route path='/aboutMe' component = { modules.AboutMe } />
+                  <Route path='/secret' component = {modules.Secret} />
+                </Switch>
+              </div>
           </div>
       </div>
     );

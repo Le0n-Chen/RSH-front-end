@@ -12,12 +12,12 @@ class CommonWindow extends Component {
         let {isLogin} = this.props; 
         console.log(this.props);
         return(
-            <div>
+            <React.Fragment>
                 {(!isLogin)?
                     <Login />:
                     <MainIndex {...this.props}/>
                 }
-            </div>
+            </React.Fragment>
         )
     }
 }

@@ -5,12 +5,17 @@ class MainIndex extends Component{
     constructor() {
         super();
         this.state={
-            items:['blackWhite', 'webStatus', 'aboutMe', 'secret']
+            items:[
+                { name: 'Black&White', url: 'blackWhite'},
+                { name: 'Web Status', url: 'webStatus'},
+                { name: 'About ME', url: 'aboutMe'},
+                { name: 'Secret', url: 'secret'}
+            ]
         }
         this._goToItem=this.goToItem.bind(this);
     }
     goToItem (itemName) {
-        this.props.history.push('/'+itemName);
+        this.props.history.push('/'+itemName.url);
     }
     render(){
         return(
@@ -19,7 +24,7 @@ class MainIndex extends Component{
                 {this.state.items.map((item, i)=>(
                     <div className='main-page__item' onClick={this.goToItem.bind(this, item)} key={i}>
                         <div className='main-page__border'>
-                            {item}
+                            {item.name}
                         </div>
                     </div>
                 ))}
