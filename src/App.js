@@ -7,7 +7,6 @@ import * as modules from './pages/modules'
 import mirror from 'mirrorx';
 import GoBack from './pages/window/controller/goBack';
 import GoForward from './pages/window/controller/goForward';
-import AnimateRoll from './pages/window/animateRoll';
 let {withRouter, Switch, Route, connect, actions} = mirror;
 
 
@@ -25,7 +24,6 @@ class App extends Component {
               
               <h4 className="window-title"> Leon BM </h4>
               <div className="window-main"></div>
-              <AnimateRoll />
               <div className="window-main--text">
                 
                 <Switch>

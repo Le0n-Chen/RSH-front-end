@@ -7,7 +7,10 @@ class Secret extends Component{
 
     render(){
         return(
-            <div></div>
+            <div className="secret-main">
+                <label className="secret-main__label">Browse documents</label>
+                <input type="file" name="apkBeforeSign"/>
+            </div>
         )
     }
 }
