@@ -1,0 +1,289 @@
+.window-common{
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin:auto;
+   width: 100vh;
+   height: 100vh;
+   
+   
+}
+.window-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+    background: black;
+    border: 1rem solid burlywood;
+    z-index: 2;
+}
+
+.window-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+    background: black;
+    border: 1rem solid burlywood;
+    z-index: 2;
+    
+}
+.window-title{
+    font-size: 2rem;
+    color: cornflowerblue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10%;
+    width: 10rem;
+    z-index: 999;
+    
+}
+.window-context{
+    width: 60%;
+    height: 80%;
+    margin: 0 auto 0 auto;
+    color: white;
+}
+.window-context__about{
+    padding-top: 10%;
+}
+.go-back-forward{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 65%;
+    height: 65%;
+    background: burlywood;
+    border-radius: 10%;
+}
+
+.go-back-forward:hover{
+    background: brown;
+}
+.window-left:hover{
+    background: blue;
+}
+.window-controller{
+    opacity: 0.8;
+}
+.window-right:hover{
+    background: blue;
+}
+
+.window-main{
+    height: 100%;
+    width:  100%;
+    position: absolute;
+    background: black;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 5px solid #777;
+    box-sizing: border-box;
+    z-index: 4;
+}
+.window-main--text{
+    height: 60%;
+    width:  100%;
+    margin-top: 35%;
+    position: absolute;
+    z-index: 5;
+}
+.form-all{
+    
+    text-align: center;
+    margin: 0 auto;
+
+}
+.login-row{
+    width: 40%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    
+}
+
+.login-row__label{
+    color: white;
+    float: left;
+    
+}
+.login-row__input{
+    float: right;
+    width: 6rem;
+}
+.login-go{
+    color: white;
+    background: blue;
+    border-radius: 15%;
+    font-weight: bolder;
+}
+.main-page{
+    height: 100%;
+    
+    z-index: 999;;
+}
+.main-page--box{
+    width: 80%;
+    height: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-page__item{
+    padding: auto 10rem;
+    height: 60%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+
+}
+
+.main-page__item:hover{
+    background: blue;
+    border-radius: 2rem;
+}
+.main-page__border{
+    width: 80%;
+    height: 50%;
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: bolder;
+    border-radius: 1rem;
+    border: 5px solid white;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list-black{
+    position: relative;
+    width: 50%;
+    margin: 0 auto; 
+    min-height: 40%;
+    background: white;
+    color: black;
+    
+}
+.list-black__ul{
+    min-height: 100%;
+    overflow: scroll;
+}
+.list-black__li{
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 2rem;
+}
+.list-black__bottom{
+    position: absolute;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: white;
+    font-weight:bold;
+    height: 2rem;
+    width: 25%;;
+    background: blue;
+    border-radius: 2rem;
+    bottom: -4rem;
+}
+.list-black__edit{    
+    left: 0;  
+}
+
+.list-black__refresh{
+    right: 0;
+
+}
+.window-canvas{
+    position: absolute;
+    width: 10rem;
+    height: 20%;
+    top: 5%;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+    margin: auto;
+}
+.file {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: left;
+}
+.file label {
+  padding-left: 5%;
+  display: inline-block;
+  font-size: 1rem;
+  color: white;
+}
+.userdefined-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 0;  /*应对子元素为 inline-block 引起的外边距*/
+  text-align: center;
+}
+.userdefined-file input[type="text"] {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 14px;
+  padding-left: 14px;  
+  width: 60%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.userdefined-file button {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20%;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  background-color: #f54;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.file input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  opacity: 0;
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
