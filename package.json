@@ -4,17 +4,20 @@
   "private": true,
   "dependencies": {
     "antd-mobile": "^2.2.11",
+    "customize-cra": "^0.2.12",
     "echarts": "^4.2.0-rc.2",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "mirrorx": "^0.2.12",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "^2.1.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -24,5 +27,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-plugin-import": "^1.11.0",
+    "react-app-rewired": "^2.1.1"
+  }
 }
