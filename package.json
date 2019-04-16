@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.2.11",
     "echarts": "^4.2.0-rc.2",
     "mirrorx": "^0.2.12",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2"
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
