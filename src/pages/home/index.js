@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, WingBlank, DatePicker } from 'antd-mobile';
+import { Card, WingBlank, DatePicker, List } from 'antd-mobile';
 import DatePickerChildren from '../common/datePickerChildren';
 import './style.less';
 class Home extends Component{
@@ -12,13 +12,14 @@ class Home extends Component{
     }
   }
   render() {
+    const Item = List.Item;
     return (
       <div>
         <title className="title-home">Raspberry Pi Status</title>
         <WingBlank size="lg">
           <Card>
             <Card.Header
-              title="Status"
+              title="状态总览"
               thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
               extra={
                   <DatePicker
@@ -33,13 +34,17 @@ class Home extends Component{
               }
             />
             <Card.Body>
-              <div>This is content of `Card`</div>
+              <List className="my-list">
+                <Item extra={'4v'}>当前电压</Item>
+                <Item extra={'良好'}>网络状态</Item>
+                <Item extra={'510-5G'}>WIFI名称</Item>
+                <Item extra={'良好'}>摄像头状态</Item>
+              </List>
             </Card.Body>
-            <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
-        </Card>
-        
-      </WingBlank>
-    </div>
+            <Card.Footer />
+          </Card>
+        </WingBlank>
+      </div>
     )
   }
 }

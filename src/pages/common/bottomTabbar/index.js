@@ -1,5 +1,6 @@
 import { TabBar } from 'antd-mobile';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './style.less'
 class BottomTabbar extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class BottomTabbar extends Component {
 
   renderTabs = (tabs) => {
     let list = [];
+    const pathname = this.props.history.location.pathname.substring(1);
     for (let tab of tabs) {
       let tabComponent = tab.componentName;
       let tabLower = tab.lowerName;
@@ -41,7 +43,7 @@ class BottomTabbar extends Component {
             this.setState({selectedTab: tabLower,});
           }}
         >
-        {this.props.page}
+        {pathname === tabLower ? this.props.page : null}
         </TabBar.Item>);
     };
     return list;
@@ -63,6 +65,9 @@ class BottomTabbar extends Component {
     );
   }
 }
-
+BottomTabbar.propTypes = {
+  tabs: PropTypes.array,
+  history: PropTypes.object,
+};
 export default BottomTabbar;
 
