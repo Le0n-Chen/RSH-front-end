@@ -6,10 +6,14 @@ class BottomTabbar extends Component {
   constructor(props) {
     super(props);
     let prepopPage; // pre-pop-pagename 
-    if (this.props.history.location.pathname === '/') {
+    let urlPath = this.props.history.location.pathname.substring(1);
+    
+    if (urlPath === '/') {
       prepopPage = this.props.tabs[0].lowerName;
+    } else if(this.calculateCharNum(urlPath, '/') === 1) {
+      prepopPage = urlPath;
     } else {
-      prepopPage = this.props.history.location.pathname.substring(1);
+      prepopPage = urlPath.split('/')[0];
     }
 
     this.state = {
@@ -24,10 +28,12 @@ class BottomTabbar extends Component {
     pageName = pageName.toLowerCase();
     this.props.history.push('/'+pageName);
   }
+  calculateCharNum(str, symbol) {
+    return str.split(symbol).length;
+  }
 
   renderTabs = (tabs) => {
     let list = [];
-    const pathname = this.props.history.location.pathname.substring(1);
     for (let tab of tabs) {
       let tabComponent = tab.componentName;
       let tabLower = tab.lowerName;
@@ -43,7 +49,7 @@ class BottomTabbar extends Component {
             this.setState({selectedTab: tabLower,});
           }}
         >
-        {pathname === tabLower ? this.props.page : null}
+        {this.state.selectedTab === tabLower? this.props.page : null}
         </TabBar.Item>);
     };
     return list;

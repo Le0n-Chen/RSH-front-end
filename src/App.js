@@ -8,6 +8,7 @@ import My from './pages/my';
 import mirror from 'mirrorx';
 import BottomTabbar from './pages/common/bottomTabbar';
 import { Tabs } from './contant/config';
+import ModulesList from './pages/modules/list';
 let {withRouter, Switch, Route, connect} = mirror;
 
 
@@ -21,7 +22,8 @@ class App extends Component {
       <Switch>
         <Route path='/' exact component = {Home} />
         <Route path='/home' component = {Home} />
-        <Route path='/modules' component = {Modules} />
+        <Route path='/modules' exact component = {Modules} />
+        <Route path='/modules/:moduleName' component = {ModulesList} />
         <Route path='/setting' component = {Setting} />
         <Route path='/my' component = {My} />
       </Switch>

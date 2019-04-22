@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Grid, Carousel, SearchBar, NoticeBar} from 'antd-mobile';
+import {moduleName2moduleUrl} from '../../utils/string';
 class Modules extends Component {
   constructor() {
     super();
-    const allModulesName = ['WIFI Speed', 'WIFI Users', 'Monitor']
+    const allModulesName = ['WIFI Speed', 'WIFI User', 'Monitor']
     const modules = Array.from(allModulesName).map((name, i) => ({
       icon: '',
       text: name
@@ -22,6 +23,12 @@ class Modules extends Component {
         data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
       });
     }, 100);
+  }
+
+  switchModule(_el) {
+    const moduleText = _el.text;
+    const moduleUrl = moduleName2moduleUrl(moduleText);
+    this.props.history.push('/modules/'+ moduleUrl);
   }
   render() {
     return(
@@ -52,7 +59,7 @@ class Modules extends Component {
           ))}
         </Carousel>
         <SearchBar placeholder="Search" maxLength={8} />
-        <Grid data={this.state.modules} isCarousel onClick={_el => console.log(_el)} />
+        <Grid data={this.state.modules} isCarousel onClick={(_el) => {this.switchModule(_el);}} />
         <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}  style={{position: 'absolute', bottom: '0', width:'100%'}}>
           Notice: @copyright Leon.Chen
         </NoticeBar>

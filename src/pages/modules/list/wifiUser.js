@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
 import echarts from 'echarts';
-import './style.less';
+import {DatePicker, Card} from 'antd-mobile';
+import DatePickerChildren from '../../common/datePickerChildren';
+
+import '../style.less';
+
 class WifiUser extends Component{
   constructor() {
     super();
-    
+    const nowTimeStamp = Date.now();
+    const now = new Date(nowTimeStamp);
+    this.state={
+        date: now
+    }
   }
   componentDidMount(){
       this.loadChart();
@@ -15,7 +23,6 @@ class WifiUser extends Component{
     const option = {
         title: {
             text: '当日用户数量',
-            subtext: '纯属虚构'
         },
         tooltip: {
             trigger: 'axis',
@@ -23,11 +30,11 @@ class WifiUser extends Component{
                 type: 'cross'
             }
         },
-        toolbox: {
-            show: true,
-            feature: {
-                saveAsImage: {}
-            }
+        grid: {
+            x:50,
+            y:45,
+            x2:5,
+            y2:20,
         },
         xAxis:  {
             type: 'category',
@@ -37,7 +44,7 @@ class WifiUser extends Component{
         yAxis: {
             type: 'value',
             axisLabel: {
-                formatter: '{value} W'
+                formatter: '{value}W'
             },
             axisPointer: {
                 snap: true
@@ -93,8 +100,30 @@ class WifiUser extends Component{
 
   render() {
     return (
-        <div className="wifi-user-sum-echart" ref={c => this.chart = c}>
-            
+        <div>
+            <Card>
+                <Card.Header
+                title="状态总览"
+                thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                extra={
+                    <DatePicker
+                        mode="date"
+                        title="Select Date"
+                        extra="Optional"
+                        value={this.state.date}
+                        onChange={date => this.setState({ date })}
+                        >
+                        <DatePickerChildren />
+                    </DatePicker>
+                }
+                />
+                <Card.Body>
+                    <div className="wifi-user-sum-echart" ref={c => this.chart = c}>
+                
+                    </div>
+                </Card.Body>
+                <Card.Footer />
+            </Card>   
         </div>
     )
   }
