@@ -9,7 +9,6 @@ class ModulesList extends Component{
   }
   renderModule() {
     const moduleName = this.props.match.params.moduleName;
-    console.log(moduleName);
     if(moduleName === 'wifiuser') {
       return <WifiUser {...this.props}/>
     } else if (moduleName === 'wifispeed') {
