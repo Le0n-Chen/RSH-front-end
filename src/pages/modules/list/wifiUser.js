@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import echarts from 'echarts';
 import {DatePicker, Card} from 'antd-mobile';
 import DatePickerChildren from '../../common/datePickerChildren';
+import {actions} from 'mirrorx';
+import {formatDate} from '../../../utils/string';
 
 import '../style.less';
 
@@ -11,14 +13,17 @@ class WifiUser extends Component{
     const nowTimeStamp = Date.now();
     const now = new Date(nowTimeStamp);
     this.state={
-        date: now
+        date: now,
+        formatDate: formatDate(now)
     }
+    this._handleDateChange = this.handleDateChange.bind(this);
   }
   componentDidMount(){
       this.loadChart();
   }
   loadChart() {
     // console.log(this.chart)
+    // let usernum = actions.network.getUserSumList(this.)
     this.chartObj = echarts.init(this.chart)
     const option = {
         title: {
@@ -97,6 +102,9 @@ class WifiUser extends Component{
     };
     this.chartObj.setOption(option)
   } 
+  handleDateChange(date) {
+    this.setState({ date, formatDate: formatDate(date)});
+  }
 
   render() {
     return (
@@ -111,7 +119,7 @@ class WifiUser extends Component{
                         title="Select Date"
                         extra="Optional"
                         value={this.state.date}
-                        onChange={date => this.setState({ date })}
+                        onChange={this._handleDateChange}
                         >
                         <DatePickerChildren />
                     </DatePicker>

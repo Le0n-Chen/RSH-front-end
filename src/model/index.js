@@ -1,4 +1,5 @@
 import mirror from 'mirrorx';
+import * as network from './network';
 
 function getInitialState () {
     let initialState = {
@@ -24,4 +25,11 @@ mirror.model({
     initialState: getInitialState(),
     reducers: reducer,
     effects
+});
+
+mirror.model({
+    name: 'network',
+    initialState: network.initialState(),
+    reducers: network.reducers,
+    effects: network.effects
 });

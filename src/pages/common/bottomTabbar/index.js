@@ -8,7 +8,7 @@ class BottomTabbar extends Component {
     let prepopPage; // pre-pop-pagename 
     let urlPath = this.props.history.location.pathname.substring(1);
     
-    if (urlPath === '/') {
+    if (this.props.history.location.pathname === '/') {
       prepopPage = this.props.tabs[0].lowerName;
     } else if(this.calculateCharNum(urlPath, '/') === 1) {
       prepopPage = urlPath;

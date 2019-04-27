@@ -9,4 +9,16 @@ function moduleName2moduleUrl(moduleName) {
   moduleUrl = moduleUrl.replace(/\s*/g, ''); // delete blank space
   return moduleUrl;
 }
-export{ firstToUpperCase, moduleName2moduleUrl };
+
+function formatDate(d) {
+  let month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
+export{ firstToUpperCase, moduleName2moduleUrl, formatDate};
