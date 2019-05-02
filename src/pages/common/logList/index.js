@@ -3,7 +3,7 @@ import {List, Icon} from 'antd-mobile';
 import './style.less';
 const Item = List.Item;
 class LogList extends Component{
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       data: []
@@ -13,26 +13,30 @@ class LogList extends Component{
     this.loadData();
   }
 
-  async loadData() {
-    const {validData, invalidData, isValidShow} = this.props;
+  componentWillReceiveProps(nextProps) {
+    this.loadData(nextProps.isValidShow);
+  }
+
+  async loadData(isValidShow = true) {
     let data;
     if(isValidShow) {
-      data = await this.props.handleAllowedDataShow();
+      data = await this.props.handleValidDataShow();
       this.setState({data: data})
-      console.log('data:', data);
     }else{
-      data = this.props.handleInvalidShow;;
+      data = await this.props.handleInvalidDataShow();
+      this.setState({data: data})
     }
   }
+
   render() {
     return (
       <List>
-        {this.state.data.map((item) => {
+        {this.state.data.map((item, i) => {
           return (
-            <Item extra={<Icon className="icon-right" type={"right"} />}>
+            <Item key={i} extra={<Icon className="icon-right" type={"right"} />}>
               <div className="list-main">
                 <div>{item.macAddress ? item.macAddress : 'undefined'}</div>
-                <div>{item.name ? item.name : 'undefined'}</div>
+                <div>{item.noteName ? item.noteName : 'undefined'}</div>
               </div>
             </Item>)
         })}

@@ -16,6 +16,11 @@ export const effects = {
   async getValidUser(date) {
     let data = await api.get('/network/user/allowed/' + date);
     return data;
+  },
+
+  async getInvalidUser(date) {
+    let data = await api.get('/network/user/invalid/' + date);
+    return data;
   }
   
 };

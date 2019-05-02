@@ -16,20 +16,11 @@ class NetworkUser extends Component{
         date: now,
         formatDate: formatDate(now),
         isValidShow: true,
-        validData: [
-            {macAddress: '11:11:22:33:44', name: 'leon'},
-            {macAddress: '11:df:ee:df:Ee', name: 'tsy'},
-            {macAddress: '11:df:ee:df:Ef', name: 'kk'},
-            {macAddress: '11:df:ee:df:Ef', name: 'test'},
-        ],
-        invalidData: [
-            {macAddress: '12:df:ee:gg:ee', name: ''},
-            {macAddress: '12:df:ee:gg:ee', name: 'dior'},
-        ]
     }
     this._handleDateChange = this.handleDateChange.bind(this);
     this._handleValidLogChange = this.handleValidLogChange.bind(this);
     this._handleAllowedDataShow = this.handleAllowedDataShow.bind(this);
+    this._handleInvalidDataShow = this.handleInvalidDataShow.bind(this);
   }
   componentDidMount(){
     this.loadChart();
@@ -96,7 +87,6 @@ class NetworkUser extends Component{
     let result;
     await actions.network.getValidUser(this.state.formatDate).then((data) => {
         result = data;
-        console.log('这是', result);
     }).catch((err) => {
         console.log(err);
     });
@@ -104,8 +94,14 @@ class NetworkUser extends Component{
 
   }
 
-  handleInvalidDataShow() {
-
+  async handleInvalidDataShow() {
+    let result;
+    await actions.network.getInvalidUser(this.state.formatDate).then((data) => {
+        result = data;
+    }).catch((err) => {
+        console.log(err);
+    });
+    return result;
   }
 
   handleValidLogChange() {
@@ -115,7 +111,7 @@ class NetworkUser extends Component{
   }
 
   render() {
-    const {isValidShow, validData, invalidData} = this.state;
+    const {isValidShow} = this.state;
     return (
         <div className='network-user'>
             <Card>
@@ -143,10 +139,9 @@ class NetworkUser extends Component{
             </Card>
             <WingBlank size="lg" className="sc-example">
                 <SegmentedControl values={['合法连接', '非法连接']} className='sub-title' onChange={this._handleValidLogChange}/>
-                <LogList validData={validData} 
-                        invalidData={invalidData} 
-                        isValidShow={isValidShow}
-                        handleAllowedDataShow={this._handleAllowedDataShow}/>
+                <LogList isValidShow={isValidShow}
+                        handleValidDataShow={this._handleAllowedDataShow}
+                        handleInvalidDataShow={this._handleInvalidDataShow}/>
             </WingBlank>
         </div>
     )
