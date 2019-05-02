@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-class WifiSpeed extends Component{
+class NetworkSpeed extends Component{
   render() {
     return(
       <div>wifispeed</div>
     )
   }
 }
-export default WifiSpeed;
+export default NetworkSpeed;

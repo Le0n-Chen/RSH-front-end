@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import WifiUser from './wifiUser';
-import WifiSpeed from './wifiSpeed';
+import NetworkUser from './networkUser';
+import NetworkSpeed from './networkSpeed';
 import Monitor from './monitor';
 import PropTypes from 'prop-types';
 class ModulesList extends Component{
@@ -10,9 +10,9 @@ class ModulesList extends Component{
   renderModule() {
     const moduleName = this.props.match.params.moduleName;
     if(moduleName === 'wifiuser') {
-      return <WifiUser {...this.props}/>
+      return <NetworkUser {...this.props}/>
     } else if (moduleName === 'wifispeed') {
-      return <WifiSpeed {...this.props} />
+      return <NetworkSpeed {...this.props} />
     } else if(moduleName === 'monitor') {
       return <Monitor {...this.props} />
     } else {
