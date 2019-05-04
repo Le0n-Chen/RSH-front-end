@@ -18,13 +18,13 @@ class LogList extends Component{
   }
 
   async loadData(isValidShow = true) {
-    let data;
+    let data = [];
     if(isValidShow) {
       data = await this.props.handleValidDataShow();
-      this.setState({data: data})
+      data && this.setState({data: data})
     }else{
       data = await this.props.handleInvalidDataShow();
-      this.setState({data: data})
+      data && this.setState({data: data})
     }
   }
 
