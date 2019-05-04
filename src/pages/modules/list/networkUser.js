@@ -138,7 +138,7 @@ class NetworkUser extends Component{
                 <Card.Footer />
             </Card>
             <WingBlank size="lg" className="sc-example">
-                <SegmentedControl values={['合法连接', '非法连接']} className='sub-title' onChange={this._handleValidLogChange}/>
+                <SegmentedControl selectedIndex={isValidShow ? 0 : 1} values={['合法连接', '非法连接']} className='sub-title' onChange={this._handleValidLogChange} />
                 <LogList isValidShow={isValidShow}
                         handleValidDataShow={this._handleAllowedDataShow}
                         handleInvalidDataShow={this._handleInvalidDataShow}/>

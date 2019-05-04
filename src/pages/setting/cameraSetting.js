@@ -6,14 +6,22 @@ class CameraSetting extends Component{
   constructor() {
     super();
     this.state = {
-      cameraFunction: '是否打开监控功能'
+      cameraFunction: 'common'
     }
   }
+
+  handleFunctionChange(value) {
+    this.setState({
+      cameraFunction: value
+    })
+    return;
+  }
+
   render() {
-    const {value2} = this.state;
+    const {cameraFunction} = this.state;
     const data2 = [
-      { value: 0, label: '摄像头基础功能', extra: '可远程查看家庭状况，websocket较流畅' },
-      { value: 1, label: '摄像头进阶功能', extra: '人脸识别。树莓派性能有限，人脸识别算法不够完善，置信度较低， 而且会很卡' },
+      { value: 'common', label: '摄像头基础功能', extra: '可远程查看家庭状况，websocket较流畅' },
+      { value: 'pro', label: '摄像头进阶功能', extra: '人脸识别。树莓派性能有限，人脸识别算法不够完善，置信度较低， 而且会很卡' },
     ];
     return(
       <div>
@@ -28,7 +36,7 @@ class CameraSetting extends Component{
             <Card.Body>
               <List>
                   {data2.map(i => (
-                    <RadioItem key={i.value} checked={value2 === i.value} onChange={(value) => this.onChange2(i.value)}>
+                    <RadioItem key={i.value} checked={i.value === cameraFunction} onChange={(value) => this.handleFunctionChange(i.value)}>
                       {i.label}<List.Item.Brief>{i.extra}</List.Item.Brief>
                     </RadioItem>
                 ))}

@@ -4,9 +4,9 @@ import {moduleName2moduleUrl} from '../../utils/string';
 class Modules extends Component {
   constructor() {
     super();
-    const allModulesName = ['WIFI Speed', 'WIFI User', 'Monitor']
+    const allModulesName = ['Network Speed', 'Network User', 'Monitor']
     const modules = Array.from(allModulesName).map((name, i) => ({
-      icon: '',
+      icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
       text: name
     }));
 

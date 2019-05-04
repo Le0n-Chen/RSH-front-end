@@ -10,20 +10,21 @@ class LogList extends Component{
     } 
   }
   componentWillMount() {
-    this.loadData();
+    this.loadData(true);
   }
 
   componentWillReceiveProps(nextProps) {
     this.loadData(nextProps.isValidShow);
+    
   }
 
-  async loadData(isValidShow = true) {
+  async loadData(isValidShow) {
     let data = [];
     if(isValidShow) {
-      data = await this.props.handleValidDataShow();
+      data = await this.props.handleValidDataShow(isValidShow);
       data && this.setState({data: data})
     }else{
-      data = await this.props.handleInvalidDataShow();
+      data = await this.props.handleInvalidDataShow(isValidShow);
       data && this.setState({data: data})
     }
   }

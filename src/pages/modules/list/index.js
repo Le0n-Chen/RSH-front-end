@@ -9,9 +9,9 @@ class ModulesList extends Component{
   }
   renderModule() {
     const moduleName = this.props.match.params.moduleName;
-    if(moduleName === 'wifiuser') {
+    if(moduleName === 'networkuser') {
       return <NetworkUser {...this.props}/>
-    } else if (moduleName === 'wifispeed') {
+    } else if (moduleName === 'networkspeed') {
       return <NetworkSpeed {...this.props} />
     } else if(moduleName === 'monitor') {
       return <Monitor {...this.props} />
