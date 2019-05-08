@@ -6,6 +6,7 @@ import {actions} from 'mirrorx';
 import {formatDate} from '../../../utils/string';
 import LogList from '../../common/logList';
 import '../style.less';
+import PopoverR from '../../common/popOverR';
 
 class NetworkUser extends Component{
   constructor() {
@@ -141,7 +142,8 @@ class NetworkUser extends Component{
                 <SegmentedControl selectedIndex={isValidShow ? 0 : 1} values={['合法连接', '非法连接']} className='sub-title' onChange={this._handleValidLogChange} />
                 <LogList isValidShow={isValidShow}
                         handleValidDataShow={this._handleAllowedDataShow}
-                        handleInvalidDataShow={this._handleInvalidDataShow}/>
+                        handleInvalidDataShow={this._handleInvalidDataShow}
+                        rightItem={ PopoverR }/>
             </WingBlank>
         </div>
     )

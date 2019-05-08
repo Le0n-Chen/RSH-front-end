@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {List, Icon} from 'antd-mobile';
 import './style.less';
+import PopoverR from '../popOverR';
 const Item = List.Item;
 class LogList extends Component{
   constructor() {
@@ -30,11 +31,12 @@ class LogList extends Component{
   }
 
   render() {
+    const Popover = this.props.rightItem;
     return (
       <List>
         {this.state.data.map((item, i) => {
           return (
-            <Item key={i} extra={<Icon className="icon-right" type={"right"} />}>
+            <Item key={i} extra={<Popover />}>
               <div className="list-main">
                 <div>{item.macAddress ? item.macAddress : 'undefined'}</div>
                 <div>{item.noteName ? item.noteName : 'undefined'}</div>

@@ -14,6 +14,7 @@ class NetworkSetting extends Component{
     this.state = {
       isStart: true,
       cycleLength: 1800000,
+      networkRange: '192.168.88.1',
       isCycleLength: true,
 
       isNetworkSubmitShow: true
@@ -38,8 +39,14 @@ class NetworkSetting extends Component{
     }
     
   }
+
+  handleIpRange(value) {
+    this.setState({
+      networkRange: value
+    })
+  }
   render() {
-    const {isStart, cycleLength, isNetworkSubmitShow} = this.state;
+    const {isStart, cycleLength, isNetworkSubmitShow, networkRange} = this.state;
     return(
       <div>
         <WingBlank size="lg">
@@ -68,6 +75,15 @@ class NetworkSetting extends Component{
                   onBlur={(value) => this.handleCycleChange(value)}
                   moneyKeyboardWrapProps={moneyKeyboardWrapProps}
                 >扫描周期</InputItem>
+                <InputItem
+                  type='money'
+                  defaultValue={networkRange}
+                  placeholder="255"
+                  clear
+                  onChange={(value) => this.handleIpRange(value)}
+                  onBlur={(value) => this.handleIpRange(value)}
+                  moneyKeyboardWrapProps={moneyKeyboardWrapProps}
+                >扫描网段</InputItem>
               </List>
               <Button type="primary" disabled={!isNetworkSubmitShow}>提交</Button><WhiteSpace />
             </Card.Body>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 class NetworkSpeed extends Component{
   render() {
     return(
-      <div>wifispeed</div>
+      <div>Shell</div>
     )
   }
 }

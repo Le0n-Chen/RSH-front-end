@@ -6,7 +6,6 @@ class Modules extends Component {
     super();
     const allModulesName = ['Network Speed', 'Network User', 'Monitor']
     const modules = Array.from(allModulesName).map((name, i) => ({
-      icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
       text: name
     }));
 
@@ -59,7 +58,7 @@ class Modules extends Component {
           ))}
         </Carousel>
         <SearchBar placeholder="Search" maxLength={8} />
-        <Grid data={this.state.modules} isCarousel onClick={(_el) => {this.switchModule(_el);}} />
+        <Grid className="grid" data={this.state.modules} isCarousel onClick={(_el) => {this.switchModule(_el);}} />
         <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}  style={{position: 'absolute', bottom: '0', width:'100%'}}>
           Notice: @copyright Leon.Chen
         </NoticeBar>
