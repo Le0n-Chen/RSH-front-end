@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import NetworkUser from './networkUser';
-import NetworkSpeed from './networkSpeed';
-import Monitor from './monitor';
+import Camera from '../../camera';
 import PropTypes from 'prop-types';
 class ModulesList extends Component{
   constructor() {
@@ -11,10 +10,8 @@ class ModulesList extends Component{
     const moduleName = this.props.match.params.moduleName;
     if(moduleName === 'networkuser') {
       return <NetworkUser {...this.props}/>
-    } else if (moduleName === 'networkspeed') {
-      return <NetworkSpeed {...this.props} />
     } else if(moduleName === 'monitor') {
-      return <Monitor {...this.props} />
+      return <Camera {...this.props} />
     } else {
       return <div>暂无此功能模块</div>
     }

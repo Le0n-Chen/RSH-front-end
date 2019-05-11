@@ -5,8 +5,8 @@ import DatePickerChildren from '../../common/datePickerChildren';
 import {actions} from 'mirrorx';
 import {formatDate} from '../../../utils/string';
 import LogList from '../../common/logList';
-import '../style.less';
 import PopoverR from '../../common/popoverR';
+import '../style.less';
 
 class NetworkUser extends Component{
   constructor() {

@@ -8,7 +8,7 @@ class Modules extends Component{
     return (
       <div>
         <div className='my-header'>
-          <div className='hello-text'>管理员您好！</div>
+          <div className='hello-text'>Respberry Security Home 1.0</div>
           {/* <div className='modify-passwd'>修改密码</div> */}
         </div>
         <List renderHeader={() => '您的当前状态'} className="my-list">

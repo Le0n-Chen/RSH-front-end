@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Iframe from 'react-iframe';
 import { Steps } from 'antd-mobile';
-import '../style.less';
+import './style.less';
 import { actions } from 'mirrorx';
-import { formatDate } from '../../../utils/string';
+import { formatDate } from '../../utils/string';
 
 const Step = Steps.Step;
 const customIcon = () => (
@@ -15,7 +15,7 @@ const customIcon = () => (
   </svg>
 );
 
-class Monitor extends Component{
+class PictureList extends Component{
 
   constructor() {
     super();
@@ -48,7 +48,7 @@ class Monitor extends Component{
     return(
       <div className="monitor">
         <div className="left-bar">
-          <Steps current={1}>
+          <Steps current={picData.length}>
           {picData.map((value) => {
             return (<Step title={value[0]} icon={customIcon()} />)
           })}
@@ -65,13 +65,10 @@ class Monitor extends Component{
           
         </div>
       </div>
-      
-      
-      // <img src="/show/keychain.jpg"  className="img-responsive"/>
     );
   }
 }
-export default Monitor;
+export default PictureList;
 // <Iframe url="http://192.168.88.19:8082/index.html"
       //   width="100%"
       //   height="90%"

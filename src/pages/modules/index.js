@@ -4,7 +4,7 @@ import {moduleName2moduleUrl} from '../../utils/string';
 class Modules extends Component {
   constructor() {
     super();
-    const allModulesName = ['Network Speed', 'Network User', 'Monitor']
+    const allModulesName = ['Network User', 'Monitor']
     const modules = Array.from(allModulesName).map((name, i) => ({
       text: name
     }));
