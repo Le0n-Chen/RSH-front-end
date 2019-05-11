@@ -17,3 +17,39 @@
     background-size: 100% 100%;
   }
 }
+
+.img-responsive {
+  display: inline-block;
+  height: auto;
+  width: 7rem;
+}
+
+
+.monitor {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  .left-bar {
+    display: inline-block;
+    width: 6rem;
+    flex-shrink: 0;
+    .am-steps-item{
+      height: 7rem;
+    }
+  }
+  .right-content {
+    flex-grow: 1;
+  }
+  .show-picture-item {
+    width: calc(100% - 4rem);
+    display: inline-block;
+    height: auto;
+  }
+  .right-content-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+  }
+}
+

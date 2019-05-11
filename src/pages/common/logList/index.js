@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {List, Icon} from 'antd-mobile';
 import './style.less';
-import PopoverR from '../popOverR';
 const Item = List.Item;
 class LogList extends Component{
   constructor() {

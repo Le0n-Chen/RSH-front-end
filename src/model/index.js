@@ -1,5 +1,6 @@
 import mirror from 'mirrorx';
 import * as network from './network';
+import * as camera from './camera';
 
 function getInitialState () {
     let initialState = {
@@ -32,4 +33,11 @@ mirror.model({
     initialState: network.initialState(),
     reducers: network.reducers,
     effects: network.effects
+});
+
+mirror.model({
+    name: 'camera',
+    initialState: camera.initialState(),
+    reducers: camera.reducers,
+    effects: camera.effects
 });

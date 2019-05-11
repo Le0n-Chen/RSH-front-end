@@ -26,7 +26,7 @@ class BottomTabbar extends Component {
   
   switchPage(pageName) {
     pageName = pageName.toLowerCase();
-    this.props.history.push('/'+pageName);
+    this.props.history.push('/' + pageName);
   }
   calculateCharNum(str, symbol) {
     return str.split(symbol).length;
