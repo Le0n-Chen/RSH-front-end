@@ -17,13 +17,11 @@ const customIcon = () => (
 
 class PictureList extends Component{
 
-  constructor() {
+  constructor(props) {
     super();
-    const nowTimeStamp = Date.now();
-    const now = new Date(nowTimeStamp);
     this.state={
-        date: now,
-        formatDate: formatDate(now),
+        date: props.formatDate,
+        formatDate: formatDate(props.formatDate),
         isValidShow: true,
 
         picData: [],
@@ -69,9 +67,3 @@ class PictureList extends Component{
   }
 }
 export default PictureList;
-// <Iframe url="http://192.168.88.19:8082/index.html"
-      //   width="100%"
-      //   height="90%"
-      //   id="myId"
-      //   className="myClassname"
-      //   position="absolute"/>

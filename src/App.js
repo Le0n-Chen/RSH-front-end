@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
-import './model';
 import Home from './pages/home';
 import Modules from './pages/modules';
 import Setting from './pages/setting';
@@ -9,6 +7,8 @@ import mirror from 'mirrorx';
 import BottomTabbar from './pages/common/bottomTabbar';
 import { Tabs } from './contant/config';
 import ModulesList from './pages/modules/list';
+import './App.css';
+import './model';
 let {withRouter, Switch, Route, connect} = mirror;
 
 

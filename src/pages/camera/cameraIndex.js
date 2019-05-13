@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Card, WhiteSpace, DatePicker, List } from 'antd-mobile';
 import DatePickerChildren from '../common/datePickerChildren';
+import { actions } from 'mirrorx';
 import {formatDate} from '../../utils/string';
 const Item = List.Item;
 class CameraIndex extends Component {
-  constructor() {
+  constructor(props) {
     super();
     const nowTimeStamp = Date.now();
     const now = new Date(nowTimeStamp);
     this.state={
         date: now,
-        formatDate: formatDate(now),
+        formatDate: props.formatDate,
         isValidShow: true,
     }
     this._handleScanPicture = this.handleScanPicture.bind(this);
@@ -18,7 +19,10 @@ class CameraIndex extends Component {
   handleScanPicture() {
     this.props.history.push(`${this.props.match.url}/picture`);
   }
-  
+  handleDateChange(date) {
+    this.setState({ date });
+    actions.app.changeFormatDate(date);
+  }
   render() {
     return (
       <div>
@@ -33,7 +37,7 @@ class CameraIndex extends Component {
                     title="Select Date"
                     extra="Optional"
                     value={this.state.date}
-                    onChange={this._handleDateChange}
+                    onChange={(date) => this.handleDateChange(date)}
                     >
                     <DatePickerChildren />
                 </DatePicker>
