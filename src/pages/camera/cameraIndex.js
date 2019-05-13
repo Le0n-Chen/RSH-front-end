@@ -15,9 +15,13 @@ class CameraIndex extends Component {
         isValidShow: true,
     }
     this._handleScanPicture = this.handleScanPicture.bind(this);
+    this._handleToLiveStream = this.handleToLiveStream.bind(this);
   }
   handleScanPicture() {
     this.props.history.push(`${this.props.match.url}/picture`);
+  }
+  handleToLiveStream() {
+    this.props.history.push(`${this.props.match.url}/live`);
   }
   handleDateChange(date) {
     this.setState({ date });
@@ -45,16 +49,15 @@ class CameraIndex extends Component {
             />
             <Card.Body>
               <List className="my-list">
+                <Item extra={'05:00:90'}>今日工作时长</Item>
                 <Item extra={'5张'}>今日感应图片数</Item>
-                <Item extra={'开启'}>人脸识别状态</Item>
-                <Item extra={'5人'}>进门人员</Item>
-                <Item extra={'1人'}>未识别人员</Item>
               </List>
             </Card.Body>
             <Card.Footer 
-              content={<button className="live-button bottom-button">进入直播</button>} 
-              extra={<button className="scan-button bottom-button" 
-              onClick={this._handleScanPicture}>查看图片</button>} />
+              content={<button className="live-button bottom-button" onClick={this._handleToLiveStream}>进入直播</button>} 
+              extra={
+                <button className="scan-button bottom-button" 
+                  onClick={this._handleScanPicture}>查看图片</button>} />
           </Card>
         <WhiteSpace size="lg" />
       </div>

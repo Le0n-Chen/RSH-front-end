@@ -34,10 +34,12 @@ class Home extends Component{
             />
             <Card.Body>
               <List className="my-list">
-                <Item extra={'4v'}>当前电压</Item>
-                <Item extra={'良好'}>网络状态</Item>
-                <Item extra={'510-5G'}>WIFI名称</Item>
-                <Item extra={'良好'}>摄像头状态</Item>
+                <Item extra={'53℃'}>CPU温度</Item>
+                <Item extra={'13.5%'}>CPU占用情况</Item>
+                <Item extra={'896M'}>内存总大小</Item>
+                <Item extra={'33M'}>已使用内存大小</Item>
+                <Item extra={'59G'}>硬盘总空间</Item>
+                <Item extra={'2.3G'}>硬盘已使用空间</Item>
               </List>
             </Card.Body>
             <Card.Footer />

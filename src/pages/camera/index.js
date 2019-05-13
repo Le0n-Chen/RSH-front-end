@@ -3,6 +3,7 @@ import mirror from 'mirrorx';
 import PictureList from './pictureList';
 import CameraIndex from './cameraIndex';
 import PropTypes from 'prop-types';
+import LiveStream from './liveStream';
 let { Switch, Route, connect,withRouter } = mirror;
 
 class Camera extends Component {
@@ -16,6 +17,7 @@ class Camera extends Component {
       <Switch>
         <Route path={`${this.props.match.url}`} exact render={(props) => <CameraIndex {...props} formatDate={this.props.formatDate}/>} />
         <Route path={`${this.props.match.url}/picture`} render={(props) => <PictureList {...props} formatDate={this.props.formatDate}/>} />
+        <Route path={`${this.props.match.url}/live`} component={ LiveStream }/>} />
       </Switch>
     );
   }
