@@ -1,9 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
+import {backend} from '../contant/url';
 const qs = require('qs')
 const api = {
   async get (url, data) {
     try {
-      let res = await axios.get(url, {params: data})
+      let res = await axios.get(backend + url, {params: data})
       res = res.data
       return new Promise((resolve) => {
         if (res.code === 0) {
@@ -19,7 +20,7 @@ const api = {
   },
   async post (url, data) {
     try {
-      let res = await axios.post(url, qs.stringify(data))
+      let res = await axios.post(backend + url, qs.stringify(data))
       res = res.data
       return new Promise((resolve, reject) => {
         if (res.code === 0) {
